@@ -7,7 +7,7 @@ namespace ZuberBank.Entities
     /// <summary>
     /// Represents the customer of the bank
     /// </summary>
-    public class Customer : ICustomer
+    public class Customer : ICustomer, ICloneable
     {
         #region Private Fields
         private Guid _customerID;
@@ -22,12 +22,12 @@ namespace ZuberBank.Entities
 
         #region Public Properties
         public Guid CustomerID { get => _customerID; set => _customerID = value; }
-        public long CustomerCode 
-        { 
-            get => _customerCode; 
+        public long CustomerCode
+        {
+            get => _customerCode;
             set
             {
-                if (value>0)
+                if (value > 0)
                 {
                     _customerCode = value;
                 }
@@ -37,15 +37,15 @@ namespace ZuberBank.Entities
                 }
             }
         }
-        public string CustomerName 
-        { 
+        public string CustomerName
+        {
             get => _customerName;
             set
             {
                 //customer name should be less than 40 characters
                 if (value.Length <= 40 && string.IsNullOrEmpty(value))
                 {
-                   _customerName = value;  
+                    _customerName = value;
                 }
                 else
                 {
@@ -57,8 +57,8 @@ namespace ZuberBank.Entities
         public string Landmark { get => _landmark; set => _landmark = value; }
         public string City { get => _city; set => _city = value; }
         public string Country { get => _country; set => _country = value; }
-        public string Mobile 
-        { 
+        public string Mobile
+        {
             get => _mobile;
             set
             {
@@ -72,6 +72,24 @@ namespace ZuberBank.Entities
                     throw new CustomerExceptions("Mobile Number Should be 10 digit Mobile number");
                 }
             }
+        }
+        #endregion
+
+        #region Methods
+        public object Clone()
+        {
+            return new Customer()
+            {
+                CustomerID = this.CustomerID,
+                CustomerCode = this.CustomerCode,
+                CustomerName = this.CustomerName,
+                Address = this.Address,
+                Landmark = this.Landmark,
+                _address = this.Address,
+                City = this.City,
+                Country = this.Country,
+                Mobile = this.Mobile
+            };
         }
         #endregion
     }
