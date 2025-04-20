@@ -3,9 +3,12 @@ using ZuberBank.Entities.Contracts;
 
 namespace ZuberBank.Entities
 {
+    /// <summary>
+    /// Represents the customer of the bank
+    /// </summary>
     public class Customer : ICustomer
     {
-        //fields
+        #region Private Fields
         private Guid _customerID;
         private long _customerCode;
         private string _customerName;
@@ -14,8 +17,9 @@ namespace ZuberBank.Entities
         private string _city;
         private string _country;
         private string _mobile;
+        #endregion
 
-        //Properties
+        #region Public Properties
         public Guid CustomerID { get => _customerID; set => _customerID = value; }
         public long CustomerCode { get => _customerCode; set => _customerCode = value; }
         public string CustomerName { get => _customerName; set => _customerName = value; }
@@ -24,5 +28,6 @@ namespace ZuberBank.Entities
         public string City { get => _city; set => _city = value; }
         public string Country { get => _country; set => _country = value; }
         public string Mobile { get => _mobile; set => _mobile = value; }
+        #endregion
     }
 }

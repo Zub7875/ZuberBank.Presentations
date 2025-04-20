@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace ZuberBank.Entities.Contracts
 {
+    /// <summary>
+    /// Represents the Customer of the entity
+    /// </summary>
     public interface ICustomer
     {
+        #region Properties
         Guid CustomerID { get; set; }
 
         long CustomerCode {  get; set; }
@@ -23,6 +27,7 @@ namespace ZuberBank.Entities.Contracts
         string Country { get; set; }
 
         string Mobile { get; set; }
+        #endregion
 
 
     }
