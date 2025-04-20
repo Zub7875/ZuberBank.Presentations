@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuberBank.Presentations", "ZuberBank.Presentations\ZuberBank.Presentations.csproj", "{22A1FF28-824E-447F-82FB-572E4918928E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuberBank.BusinessLogicLayer", "ZuberBank.BusinessLogicLayer\ZuberBank.BusinessLogicLayer.csproj", "{FCD39179-BFB6-403D-BE0A-52A57F8FF945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuberBank.DataAccessLayer", "ZuberBank.DataAccessLayer\ZuberBank.DataAccessLayer.csproj", "{0E543864-C002-4089-A877-23F9FA814703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuberBank.Entities", "ZuberBank.Entities\ZuberBank.Entities.csproj", "{122E2C8A-40D7-45BA-97C2-BB5D477BB75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuberBank.Configuration", "ZuberBank.Configuration\ZuberBank.Configuration.csproj", "{25224625-55E3-4590-840A-EF07BEC30AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuberBank.Exceptions", "ZuberBank.Exceptions\ZuberBank.Exceptions.csproj", "{CA270F7E-350E-4CE9-A1F8-A1101ACF033F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22A1FF28-824E-447F-82FB-572E4918928E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A1FF28-824E-447F-82FB-572E4918928E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A1FF28-824E-447F-82FB-572E4918928E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A1FF28-824E-447F-82FB-572E4918928E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD39179-BFB6-403D-BE0A-52A57F8FF945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD39179-BFB6-403D-BE0A-52A57F8FF945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD39179-BFB6-403D-BE0A-52A57F8FF945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD39179-BFB6-403D-BE0A-52A57F8FF945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E543864-C002-4089-A877-23F9FA814703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E543864-C002-4089-A877-23F9FA814703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E543864-C002-4089-A877-23F9FA814703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E543864-C002-4089-A877-23F9FA814703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122E2C8A-40D7-45BA-97C2-BB5D477BB75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122E2C8A-40D7-45BA-97C2-BB5D477BB75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122E2C8A-40D7-45BA-97C2-BB5D477BB75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122E2C8A-40D7-45BA-97C2-BB5D477BB75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25224625-55E3-4590-840A-EF07BEC30AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25224625-55E3-4590-840A-EF07BEC30AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25224625-55E3-4590-840A-EF07BEC30AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25224625-55E3-4590-840A-EF07BEC30AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA270F7E-350E-4CE9-A1F8-A1101ACF033F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA270F7E-350E-4CE9-A1F8-A1101ACF033F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA270F7E-350E-4CE9-A1F8-A1101ACF033F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA270F7E-350E-4CE9-A1F8-A1101ACF033F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E2F997A-69F7-42A6-89F7-68839C938032}
+	EndGlobalSection
+EndGlobal
