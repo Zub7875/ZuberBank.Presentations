@@ -41,12 +41,24 @@ namespace ZuberBank.DataAccessLayer
         /// <returns>Customers list</returns>s
         public List<Customer> GetCustomers()
         {
-            //create a new customer list
-            List<Customer> customerslist = new List<Customer>();
+            try
+            {
+                //create a new customer list
+                List<Customer> customerslist = new List<Customer>();
 
-            //copy all customers from source collection into the newcustomers list
-            _customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
-            return customerslist;
+                //copy all customers from source collection into the newcustomers list
+                _customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
+                return customerslist;
+            }
+            catch (CustomerExceptions)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         /// <summary>
@@ -57,16 +69,28 @@ namespace ZuberBank.DataAccessLayer
 
         public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
         {
-            //create a new customer list
-            List<Customer> customerlist = new List<Customer>();
+            try
+            {
+                //create a new customer list
+                List<Customer> customerlist = new List<Customer>();
 
-            //filter the collection
-            List<Customer> filteredCustomers = customerlist.FindAll(predicate);
+                //filter the collection
+                List<Customer> filteredCustomers = customerlist.FindAll(predicate);
 
-            //copy all customers from the source collection into the new customerlist
-            Customers.ForEach(item => filteredCustomers.Add(item.Clone() as Customer));
+                //copy all customers from the source collection into the new customerlist
+                Customers.ForEach(item => filteredCustomers.Add(item.Clone() as Customer));
 
-            return customerlist;
+                return customerlist;
+
+            }
+            catch (CustomerExceptions)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -76,12 +100,26 @@ namespace ZuberBank.DataAccessLayer
         /// <returns>Returns Guid for newly created customer</returns>
         public Guid AddCustomer(Customer customer)
         {
-            //generate new Guid
-            customer.CustomerID = Guid.NewGuid();
+            try
+            {
+                //generate new Guid
 
-            Customers.Add(customer);
+                customer.CustomerID = Guid.NewGuid();
 
-            return customer.CustomerID;
+                Customers.Add(customer);
+
+                return customer.CustomerID;
+
+            }
+            catch (CustomerExceptions)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         /// <summary>
@@ -91,25 +129,36 @@ namespace ZuberBank.DataAccessLayer
         /// <returns>Updated customer Object</returns>
         public bool UpdateCustomer(Customer customer)
         {
-            //find existing customer by customerId
-            Customer existingcustomer = Customers.Find(item => item.CustomerID == customer.CustomerID);
-
-            //update all details of customer
-            if (existingcustomer != null)
+            try
             {
-                existingcustomer.CustomerCode = customer.CustomerCode;
-                existingcustomer.CustomerName = customer.CustomerName;
-                existingcustomer.Address = customer.Address;
-                existingcustomer.Landmark = customer.Landmark;
-                existingcustomer.City = customer.City;
-                existingcustomer.Country = customer.Country;
-                existingcustomer.Mobile = customer.Mobile;
+                //find existing customer by customerId
+                Customer existingcustomer = Customers.Find(item => item.CustomerID == customer.CustomerID);
 
-                return true;
+                //update all details of customer
+                if (existingcustomer != null)
+                {
+                    existingcustomer.CustomerCode = customer.CustomerCode;
+                    existingcustomer.CustomerName = customer.CustomerName;
+                    existingcustomer.Address = customer.Address;
+                    existingcustomer.Landmark = customer.Landmark;
+                    existingcustomer.City = customer.City;
+                    existingcustomer.Country = customer.Country;
+                    existingcustomer.Mobile = customer.Mobile;
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (CustomerExceptions)
             {
-                return false;
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -120,14 +169,26 @@ namespace ZuberBank.DataAccessLayer
         /// <returns>Indicates wether the customer is deleted or not</returns>
         public bool DeleteCustomer(Guid customerId)
         {
-            //delete customer by CustomerID
-            if (Customers.RemoveAll(item => item.CustomerID == customerId) > 0)
+            try
             {
-                return true;
+                //delete customer by CustomerID
+                if (Customers.RemoveAll(item => item.CustomerID == customerId) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (CustomerExceptions)
             {
-                return false;
+                throw;
+            }
+
+            catch(Exception)
+            {
+                throw;
             }
 
         }
